@@ -1,0 +1,21 @@
+h1{color:black;}
+
+
+p:nth-of-type(4){ 
+background: red;
+}
+
+p:nth-child(3n+0){
+background:yellow;
+}
+p:nth-of-type(6){ 
+background: blue;
+}
+
+p:nth-of-type(12){ 
+background: green;
+}
+
+p:nth-of-type(odd){ 
+background: pink;
+}

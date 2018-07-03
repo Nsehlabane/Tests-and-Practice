@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body{
+    background-image: url("iphone.jpg");
+	background-repeat:no-repeat;
+}
+#fop{
+
+    background-color: rgba(0,0,0,0.7);
+	margin-top:200px;
+	margin-left:200px;
+	margin-right:200px;
+	padding:5px;
+	border-radius: 5px;
+	text-align: center;
+	color:lightblue; 
+}
+#container{
+
+    background-color:rgba(0,0,0,0.7);
+    margin-left:200px;
+    margin-right:200px;
+    border-radius:5px;
+	padding:1px;
+}
+button{
+    background-color:darkblue;
+    border-radius:5px;
+	padding:1px;
+	color:white;
+}
+p{
+    background-color:darkblue;
+	margin:5px;
+	padding:10px;
+	border-radius: 5px;
+    color:white;
+}
+#tbl{
+    margin:30px;
+	padding:10px;
+	border-radius:5px;
+}
+#name{
+    margin:5px;
+	padding:2px;
+	border-radius:5px;
+}
+#sname{
+    margin:5px;
+	padding:2px;
+	border-radius:5px;
+}
+#age{
+    margin:5px;
+	padding:2px;
+	border-radius:5px;
+}
+</style>
+</head>
+<body>
+<div id="fop">
+    <table id="tbl">
+	    <tr><td><input type = "text" id = "name" placeholder="Enter your name" value = "" ></tr></td>
+	    <tr><td><input type = "text" id = "sname" placeholder="Enter your surname" value = "" ></tr></td>
+    	<tr><td><input type = "text" id = "age" placeholder="Enter your age" value = "" ></tr></td>
+        <tr><td><button onclick = "myFunction()">add student</button><button onclick="display()">Display</button></tr></td>
+    </table>
+</div>
+<div id="container">
+
+</div>
+
+<script >
+
+	var student={name,sname,age};
+	var tribers=[];
+
+	function myFunction(){
+
+		student.name = document.getElementById("name").value;
+		student.sname = document.getElementById("sname").value;
+		student.age = document.getElementById("age").value;
+		
+		if(student.name=="")
+		{
+			alert("The name must not be empty");
+			
+		}
+		else if(isNaN(student.name.toString())==false)
+		{
+			alert("your name must be alphabets");
+		}
+		else if(student.sname=="")
+		{
+		   alert("The surname must not be empty");
+		}
+		else if(isNaN(student.sname.toString())==false)
+		{
+			alert("your surname must be alphabets");
+		}
+		else if(student.age=="")
+		{
+			alert("The age must not be empty");
+		}
+		else if(isNaN(student.age)!=false)
+		{
+			alert("The age must be a number");
+		}
+		else
+		{
+		    addToArrayList();
+		}
+	 
+	}
+	function display(){
+        for(var i in tribers){
+		    var ptag  = document.createElement("p");
+			ptag.innerHTML = tribers[i]+"";
+			var container = document.getElementById("container");
+			container.appendChild(ptag);
+		}
+	}
+	function addToArrayList(){
+
+		student.name = document.getElementById("name").value;
+		student.sname = document.getElementById("sname").value;
+		student.age = document.getElementById("age").value;
+		
+		var studDetails=student.name+" "+student.sname+" age: "+student.age+"";
+		
+		tribers.push(studDetails);
+	}
+	display();
+
+</script>
+
+</body>
+</html>

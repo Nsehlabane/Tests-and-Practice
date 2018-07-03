@@ -1,0 +1,48 @@
+<html>
+<head>
+</head>
+<body>
+<form>
+Name: <input type = "text" id = "name" value = "" > <br>
+Surname: <input type = "text" id = "sname" value = "" > <br>
+
+Age: <input type = "text" id = "age" value = "" > <br>
+<button onclick = "myAdd()"> save</button> 
+<button onclick = "myDisplay()"> display</button> 
+</form>
+
+<div id="container">
+
+</div>
+<script>
+
+var student={name,sname,age};
+var myArray=[];
+
+
+function myAdd(){
+     
+	 
+   student.name = document.getElementById("name").value;
+   student.sname = document.getElementById("sname").value;
+   student.age = document.getElementById("age").value;
+
+   var details=student.name+" "+student.sname+" "+student.age"";
+
+   myArray.push(details);
+   
+  }
+
+function myDisplay(){
+for(var i in myArray){
+    var ptag  = document.createElement("p");
+    ptag.innerHTML = myArray[i]+"";
+    var container = document.getElementById("container");
+    container.appendChild(ptag);
+  }
+}
+myDisplay();
+</script>
+
+</body>
+</html>

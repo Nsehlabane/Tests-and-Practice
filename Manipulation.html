@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Example</title>
+</head> 
+<body>
+	<h1>JavaScript Example</h1>
+
+	Name: <input type="text" id="myTextBox"/><br>
+	Surname: <input type="text" id="myTextBox2"/><br>
+	Age: <input type="text" id="myTextBox3"/><br>
+	<input type="submit" value="Click Me" onclick="substitute()"/>
+	
+	
+
+	
+	<div id="showbox"></div>
+	<div id="neo"></div>
+	<div id="shark"></div>
+</body>
+
+<script type="text/javascript">
+var student={name,Surname,age};
+function substitute(){
+subs()
+ocean()
+
+	var myValue = document.getElementById('myTextBox').value;
+	
+	if (myValue.length == 0){
+		alert('Please enter a real value!');
+		return;
+	}
+		
+	var myTitle = document.getElementById('showbox');
+	myTitle.innerHTML = myValue;
+	
+}	
+	
+	function subs(){
+
+
+	var mySurname = document.getElementById('myTextBox2').value;
+	
+	if (mySurname.lenth == 0){
+		alert('Please enter a real age!');
+		return;
+	}
+		
+	var myTitle = document.getElementById('neo');
+	myTitle.innerHTML = mySurname;
+	
+}	
+
+function ocean(){
+
+
+	var myAge = document.getElementById('myTextBox3').value;
+	
+	if (myAge.lenth == 0){
+		alert('Please enter a real animal!');
+		return;
+	}
+		
+	var myTitle = document.getElementById('shark');
+	myTitle.innerHTML = myAge;
+	
+}	
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+Name: <input type = "text" id = "name" value = "" > <br>
+
+Surname: <input type = "text" id = "surname" value = "" > <br>
+
+Age: <input type = "text" id = "age" value = "" > <br>
+
+<div id="container"> <hr
+</div>
+
+
+<button onclick = "myFunction()"> Enter
+</button> 
+
+<button onclick = "Display()"> Display
+</button> 
+
+<script >
+var student={name,surname,age};
+
+function myFunction(){
+
+student.name = document.getElementById("name").value;
+student.surname = document.getElementById("surname").value;
+student.age = document.getElementById("age").value;
+
+var ptag  = document.createElement("p");
+var ptagSurname = document.createElement("p");
+var ptagAge = document.createElement("p");
+
+
+var container = document.getElementById("container");
+
+container.appendChild(ptag);
+container.appendChild(ptagSurname);
+container.appendChild(ptagAge);
+
+ptag.innerHTML = student.name;
+ptagSurname.innerHTML = student.surname;
+ptagAge.innerHTML = student.age;
+
+var myTable = []
+
+
+myTable.push()
+
+}
+
+function Display(){
+
+
+
+}
+
+
+/*var table = []
+
+function Add() {
+
+
+}*/
+</script>
+
+</body>
+</html>

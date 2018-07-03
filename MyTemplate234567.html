@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body{
+
+</style>
+</head>
+<body>
+<div id="fop">
+    <table id="tbl">
+	    <tr><td><input type = "text" id = "name" placeholder="Enter your name" value = "" ></tr></td>
+	    <tr><td><input type = "text" id = "sname" placeholder="Enter your surname" value = "" ></tr></td>
+    	<tr><td><input type = "text" id = "age" placeholder="Enter your age" value = "" ></tr></td>
+        <tr><td><button onclick = "myFunction()">add student</button>
+				<button onclick="display()">Display</button></tr></td>
+		<tr><td><button onclick="myDelete()">Delete</button></tr></td>
+    </table>
+</div>
+<div id="container">
+
+</div>
+
+<script >
+
+	var student={name,sname,age};
+	var tribers=[];
+
+	function myFunction(){
+
+		student.name = document.getElementById("name").value;
+		student.sname = document.getElementById("sname").value;
+		student.age = document.getElementById("age").value;
+		
+		if(student.name=="")
+		{
+			alert("The name must not be empty");
+			
+		}
+		else if(isNaN(student.name.toString())==false)
+		{
+			alert("your name must be alphabets");
+		}
+		
+		
+		else if(student.sname=="")
+		{
+		   alert("The surname must not be empty");
+		   
+		   
+		}
+		else if(isNaN(student.sname.toString())==false)
+		{
+			alert("your surname must be alphabets");
+			
+			
+		}
+		else if(student.age=="")
+		{
+			alert("The age must not be empty");
+		}
+		
+		
+		
+		else if(isNaN(student.age)!=false)
+		{
+			alert("The age must be a number");
+			
+			
+		}
+		else
+		{
+		    addToArrayList();
+		}
+	 
+	}
+	function display(){
+        for(var i in tribers){
+		    var ptag  = document.createElement("p");
+			ptag.innerHTML = tribers[i]+"";
+			var container = document.getElementById("container");
+			container.appendChild(ptag);
+		}
+	}
+	function addToArrayList(){
+
+		student.name = document.getElementById("name").value;
+		student.sname = document.getElementById("sname").value;
+		student.age = document.getElementById("age").value;
+		
+		var studDetails=student.name+" "+student.sname+" age: "+student.age+"";
+		
+		tribers.push(studDetails);
+	}
+	display();
+
+	function myDelete(){
+		
+		student.name = document.getElementById("name").value;
+		student.sname = document.getElementById("sname").value;
+		student.age = document.getElementById("age").value;
+		
+		var studDetails=student.name+" "+student.sname+" age: "+student.age+"";
+		
+		tribers.pop(studDetails);
+	} 
+	myDelete();
+</script>
+
+</body>
+</html>

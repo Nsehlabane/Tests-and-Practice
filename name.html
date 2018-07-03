@@ -1,0 +1,58 @@
+<html>
+<title></title>
+<head>
+<link rel="stylesheet" type="text/css" href="name.css">
+</head>
+
+<body>
+<h2>STUDENT DETAILS</h2>
+
+
+
+	NAME:<br>
+	<input type ="text" id="name" max length="80" value="" /></br>
+
+	SURNAME:<br>
+	<input type ="text" id="surname" max length="80" value="" /></br>
+	
+	AGE:<br>
+	<input type ="text" id="age" max length="80" value="" /></br>
+	
+	<br>
+	
+	
+
+
+	<div id="Container"></div><hr>
+
+	<input type="button" value="SAVE"  onclick = "first()" /></br>
+	
+<script type="text/javascript">
+
+function first(){
+
+var student={name,surname,age};
+
+
+student.name= document.getElementById("name").value;
+student.surname= document.getElementById("surname").value;
+student.age= document.getElementById("age").value;
+
+var pname = document.CreateElement("p");
+var psurname = document.CreateElement("p");
+var page = document.CreateElement("p");
+
+pname.innerHTML = "name:" + student.name;
+psurname.innerHTML = "surname:" + student.surname;
+page.innerHTML = "age:" + student.age;
+
+var Container = document.getElementById("Container");
+
+Container.appendChild(pname);
+Container.appendChild(psurname);
+Container.appendChild(page);
+}
+</script>
+
+</body>
+</html>

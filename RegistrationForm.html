@@ -1,0 +1,129 @@
+<html>
+<head>
+</head>
+<body>
+<style>
+body {
+background-color: azure;
+}
+h1 {
+background-color: white; text-align: center;
+}
+#container{
+    background-color:white;
+    margin-left:100px;
+    margin-right:100px;
+    border-radius:5px;
+	padding:1px;
+	}
+#tbl{
+    margin:30px;
+	padding:10px;
+	border-radius:10px;
+
+button{
+    background-color:azure;
+    border-radius:5px;
+	padding:1px;
+
+}
+
+</style>
+<form>
+<h1> My Registration Form</h1>
+
+StudentName:
+<input type="text" id= "StudentName" value="" ><br>
+StudentSurname:
+<input type="text"  id= "StudentSurname" value ="" ><br>
+StudentAge:
+<input type="text" id= "StudentAge"  value=""><br>
+</form>
+<div id="container">
+</div>
+
+<table id="tbl">
+ <tr><td><button  onclick= "Display()">Displaying</button> </tr></td>
+  <tr><td><button  onclick= "AddArray()"> Add</button></tr></td>
+ <tr><td><button  onclick= " Remove()" style ="background color:yellow"> Delete</button></tr></td>
+
+</table>
+
+<script>
+var student = {StudentName,StudentSurname,StudentAge};
+var Studts=[];
+
+function Display(){		
+	for(var i in Studts){
+	
+		    var ptag  = document.createElement("p");
+			 ptag.setAttribute("id","show");
+			ptag.innerHTML = Studts[i]+"";
+				
+			var  Delete = document.createElement("input");
+			Delete.setAttribute("type","button");
+			Delete.setAttribute("value"," Delete");
+			Delete.setAttribute("onclick","deletetag()");
+			Delete.setAttribute("style","background-color:blue;");
+			ptag.appendChild(Delete);
+			
+		   var container = document.getElementById("container");
+			container.appendChild(ptag);
+			
+	}
+}
+
+function AddArray(){
+
+    student.StudentName = document.getElementById("StudentName").value;
+	student.StudentSurname = document.getElementById("StudentSurname").value;
+	student.StudentAge = document.getElementById("StudentAge").value;
+	  
+	if (student.StudentName == "")
+	{
+	alert("please enter your name");
+	}
+
+	if (student.StudentAge >= 30)
+	{
+	alert ("you are too old to register here!!!!!!!!");
+
+	}
+	else{
+
+     var Students = "name: "+student.StudentName+" Surname: "+student.StudentSurname+"  Age: "+student.StudentAge ;
+	   
+	 Studts.push(Students);   
+	
+	 
+     student.StudentName = document.getElementById("StudentName").value="";
+	 student.StudentSurname = document.getElementById("StudentSurname").value="";
+	 student.StudentAge = document.getElementById("StudentAge").value="";
+	 
+	 }
+
+
+  }
+  
+  function Remove(){
+    var container = document.getElementById("container");
+    container.remove();
+   
+   var container =  document.createElement("div");
+   container.setAttribute("id","container");
+   document.body.appendChild(container);
+   
+  }
+    function deletetag(){
+	   var del  = document.getElementById("show");
+      del.remove();
+	}
+ 
+</script>
+
+
+
+
+</body>
+</html>
+
